@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>
+Portfolio | GeoThrive Africa
+</title>
+
+<style>
+
+:root{
+--bg:#0b120e;
+--panel:#111a14;
+--text:#f2f2e8;
+--muted:#a8b1a7;
+--lime:#b7db78;
+--line:rgba(242,242,232,.14);
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:#0b120e;
+color:var(--text);
+font-family:Inter,Arial,sans-serif;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+.wrap{
+width:min(1120px,calc(100% - 40px));
+margin:auto;
+}
+
+header{
+border-bottom:1px solid var(--line);
+}
+
+nav{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+font-weight:800;
+}
+
+.back{
+color:var(--muted);
+}
+
+.hero{
+padding:100px 0 70px;
+}
+
+.label{
+color:var(--lime);
+text-transform:uppercase;
+letter-spacing:.18em;
+font-size:.75rem;
+font-weight:800;
+}
+
+h1{
+font-size:clamp(4rem,10vw,8rem);
+letter-spacing:-.06em;
+line-height:.9;
+margin:20px 0 28px;
+}
+
+.lead{
+color:var(--muted);
+font-size:1.25rem;
+max-width:700px;
+line-height:1.6;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+padding-bottom:100px;
+}
+
+.project{
+border:1px solid var(--line);
+border-radius:20px;
+padding:35px;
+min-height:320px;
+background:var(--panel);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:.2s;
+}
+
+.project:hover{
+transform:translateY(-3px);
+border-color:var(--lime);
+}
+
+.num{
+color:#738078;
+font-family:monospace;
+font-size:.8rem;
+}
+
+.project h2{
+font-size:2rem;
+letter-spacing:-.035em;
+margin:22px 0 12px;
+}
+
+.project p{
+color:var(--muted);
+line-height:1.6;
+}
+
+.link{
+color:var(--lime);
+font-weight:700;
+margin-top:35px;
+}
+
+footer{
+border-top:1px solid var(--line);
+padding:35px 0;
+color:#738078;
+font-size:.82rem;
+}
+
+@media(max-width:700px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding-top:70px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="wrap">
+
+<nav>
+
+<a class="brand"
+href="/">
+GeoThrive Africa
+</a>
+
+<a class="back"
+href="/">
+← Home
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<div class="wrap hero">
+
+<div class="label">
+Selected work
+</div>
+
+<h1>
+Portfolio.
+</h1>
+
+<p class="lead">
+Spatial projects, partnerships and experiments connecting
+geography, business intelligence, heritage, communities
+and regenerative place-making.
+</p>
+
+</div>
+
+
+<div class="wrap grid">
+
+
+<a class="project"
+href="https://map-geotripz.afrigis.co.za/"
+target="_blank">
+
+<div>
+
+<div class="num">
+01 / LIVE PLATFORM
+</div>
+
+<h2>
+GeoTripz × AfriGIS
+</h2>
+
+<p>
+A live partner mapping environment exploring location intelligence,
+spatial decision support and practical place-based applications.
+</p>
+
+</div>
+
+<div class="link">
+Explore platform ↗
+</div>
+
+</a>
+
+
+
+<a class="project"
+href="https://www.afrigis.co.za/heritage-mapping-afrigis/"
+target="_blank">
+
+<div>
+
+<div class="num">
+02 / HERITAGE
+</div>
+
+<h2>
+Heritage Mapping with AfriGIS
+</h2>
+
+<p>
+Using geospatial intelligence to connect heritage,
+culture, communities and place-based information.
+</p>
+
+</div>
+
+<div class="link">
+Read case study ↗
+</div>
+
+</a>
+
+
+
+<a class="project"
+href="https://share.google/d543dQdm2lCV5rGUG"
+target="_blank">
+
+<div>
+
+<div class="num">
+03 / SELECTED WORK
+</div>
+
+<h2>
+GeoThrive Portfolio
+</h2>
+
+<p>
+A collection of mapping, consulting,
+tourism development and spatial strategy work.
+</p>
+
+</div>
+
+<div class="link">
+Open portfolio ↗
+</div>
+
+</a>
+
+
+
+<div class="project">
+
+<div>
+
+<div class="num">
+04 / RESEARCH + DEVELOPMENT
+</div>
+
+<h2>
+H3 & Circular Economy
+</h2>
+
+<p>
+Developing proximity-based spatial frameworks for grouping
+businesses, communities, assets and regenerative economic activity.
+</p>
+
+</div>
+
+<div class="link">
+GeoThrive Africa
+</div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+© 2026 GeoThrive Africa · Cape Town · South Africa
+</div>
+
+</footer>
+
+</body>
+
+</html>

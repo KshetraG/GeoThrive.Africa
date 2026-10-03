@@ -1,146 +1,792 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GeoThrive Africa</title>
+<title>GeoThrive Africa | Spatial Strategy & Location Intelligence</title>
 
-  <meta
-    name="description"
-    content="Spatial strategy, location intelligence, regenerative geography and proximity-based solutions."
-  >
+<meta name="description"
+content="GeoThrive Africa provides spatial strategy, location intelligence, regenerative geography, H3 proximity analysis and place-based consulting.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #101713;
-      color: #f2f5ef;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+:root{
+  --bg:#0b120e;
+  --panel:#111a14;
+  --panel2:#152018;
+  --text:#f2f2e8;
+  --muted:#a8b1a7;
+  --lime:#b7db78;
+  --line:rgba(242,242,232,.14);
+  --max:1180px;
+}
 
-    main {
-      width: min(1100px, calc(100% - 40px));
-      margin: auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px 0;
-    }
+*{box-sizing:border-box}
 
-    .eyebrow {
-      color: #a6d46f;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 13px;
-      font-weight: bold;
-    }
+html{scroll-behavior:smooth}
 
-    h1 {
-      margin: 20px 0;
-      font-size: clamp(50px, 9vw, 110px);
-      line-height: 0.95;
-      max-width: 850px;
-    }
+body{
+  margin:0;
+  background:
+    linear-gradient(rgba(183,219,120,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(183,219,120,.025) 1px,transparent 1px),
+    radial-gradient(circle at 15% 5%,rgba(183,219,120,.10),transparent 30rem),
+    var(--bg);
+  background-size:64px 64px,64px 64px,auto,auto;
+  color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  line-height:1.5;
+}
 
-    p {
-      max-width: 760px;
-      color: #a8b3aa;
-      font-size: 21px;
-      line-height: 1.6;
-    }
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-    .areas {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 50px;
-      border: 1px solid #36433a;
-    }
+.wrap{
+  width:min(var(--max),calc(100% - 40px));
+  margin:auto;
+}
 
-    .area {
-      padding: 25px;
-      border-right: 1px solid #36433a;
-    }
+/* NAV */
 
-    .area:last-child {
-      border-right: none;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(11,18,14,.86);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
 
-    .area strong {
-      display: block;
-      margin-bottom: 8px;
-    }
+nav{
+  height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
 
-    .area span {
-      color: #a8b3aa;
-      line-height: 1.5;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-weight:800;
+}
 
-    @media (max-width: 750px) {
-      .areas {
-        grid-template-columns: 1fr;
-      }
+.hex{
+  width:34px;
+  height:34px;
+  border:1px solid var(--lime);
+  border-radius:10px;
+  transform:rotate(30deg);
+  position:relative;
+}
 
-      .area {
-        border-right: none;
-        border-bottom: 1px solid #36433a;
-      }
-    }
-  </style>
+.hex:after{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(183,219,120,.55);
+  border-radius:6px;
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* BUTTONS */
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 19px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+  border-color:var(--lime);
+}
+
+.button.primary{
+  background:var(--lime);
+  color:#0b120e;
+  border-color:var(--lime);
+}
+
+/* HERO */
+
+.hero{
+  min-height:82vh;
+  padding:105px 0 85px;
+  display:grid;
+  align-content:center;
+}
+
+.eyebrow,
+.section-label{
+  color:var(--lime);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.75rem;
+  font-weight:800;
+}
+
+h1{
+  font-size:clamp(4rem,10vw,9rem);
+  line-height:.87;
+  letter-spacing:-.065em;
+  margin:20px 0 30px;
+  max-width:9ch;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:clamp(1.15rem,2vw,1.5rem);
+  max-width:790px;
+  margin:0;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:36px;
+}
+
+.coords{
+  margin-top:30px;
+  color:#748076;
+  font-family:monospace;
+  font-size:.78rem;
+  letter-spacing:.07em;
+}
+
+/* SECTIONS */
+
+section{
+  padding:92px 0;
+  border-top:1px solid var(--line);
+}
+
+.section-head{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:35px;
+  margin-bottom:45px;
+}
+
+h2{
+  font-size:clamp(2.4rem,5vw,4.8rem);
+  line-height:.98;
+  letter-spacing:-.045em;
+  margin:0;
+  max-width:13ch;
+}
+
+.section-copy{
+  color:var(--muted);
+  max-width:720px;
+  font-size:1.08rem;
+}
+
+/* SERVICES */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:rgba(255,255,255,.015);
+}
+
+.card{
+  padding:28px;
+  min-height:225px;
+  border-right:1px solid var(--line);
+}
+
+.card:last-child{
+  border-right:0;
+}
+
+.num{
+  font-family:monospace;
+  color:#758078;
+  font-size:.75rem;
+  margin-bottom:55px;
+}
+
+.card h3{
+  margin:0 0 12px;
+  font-size:1.12rem;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.93rem;
+}
+
+/* PLATFORM */
+
+.feature{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:linear-gradient(145deg,var(--panel),var(--panel2));
+}
+
+.feature-copy{
+  padding:48px;
+}
+
+.feature h3{
+  margin:14px 0 20px;
+  font-size:clamp(2.4rem,5vw,4.5rem);
+  letter-spacing:-.05em;
+  line-height:.96;
+}
+
+.feature p{
+  color:var(--muted);
+  max-width:620px;
+}
+
+.map-art{
+  position:relative;
+  min-height:420px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(183,219,120,.17),transparent 32%),
+    #0d1610;
+}
+
+.map-art:before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    linear-gradient(30deg,transparent 46%,rgba(183,219,120,.15) 47%,rgba(183,219,120,.15) 48%,transparent 49%),
+    linear-gradient(150deg,transparent 46%,rgba(183,219,120,.1) 47%,rgba(183,219,120,.1) 48%,transparent 49%);
+  background-size:90px 78px;
+  transform:rotate(4deg);
+}
+
+.map-art:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border:1px solid rgba(183,219,120,.6);
+  border-radius:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:
+    0 0 0 55px rgba(183,219,120,.035),
+    0 0 0 110px rgba(183,219,120,.018);
+}
+
+/* METHOD */
+
+.flow{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+
+.flow div{
+  padding:22px 12px;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:var(--muted);
+  font-size:.75rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+/* ABOUT */
+
+.about{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:65px;
+}
+
+.about h3{
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:.97;
+  letter-spacing:-.05em;
+  margin:12px 0;
+}
+
+.about p{
+  color:var(--muted);
+  font-size:1.08rem;
+  max-width:720px;
+}
+
+.socials{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+/* CONTACT */
+
+.contact{
+  padding:55px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--panel);
+}
+
+.contact h2{
+  margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:34px 0 45px;
+  border-top:1px solid var(--line);
+  color:#748076;
+  font-size:.82rem;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .navlinks a:not(.button){
+    display:none;
+  }
+
+  .section-head,
+  .feature,
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .card{
+    border-bottom:1px solid var(--line);
+  }
+
+  .flow{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:620px){
+
+  .wrap{
+    width:calc(100% - 26px);
+  }
+
+  .hero{
+    padding:80px 0 65px;
+  }
+
+  h1{
+    font-size:clamp(3.7rem,18vw,6rem);
+  }
+
+  section{
+    padding:70px 0;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    border-right:0;
+  }
+
+  .flow{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature-copy,
+  .contact{
+    padding:30px;
+  }
+
+  .map-art{
+    min-height:290px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<main>
+<header>
+<div class="wrap">
+<nav>
 
-  <div class="eyebrow">
-    GeoThrive Africa
-  </div>
+<a class="brand" href="#top">
+  <span class="hex"></span>
+  <span>GeoThrive Africa</span>
+</a>
 
-  <h1>
-    Map. Connect. Regenerate.
-  </h1>
+<div class="navlinks">
+  <a href="#services">Services</a>
+  <a href="/portfolio/">Portfolio</a>
+  <a href="#about">About</a>
+  <a class="button"
+     href="mailto:kshetra.govindasamy@gmail.com?subject=GeoThrive%20Demo%20Request">
+    Request a demo
+  </a>
+</div>
 
-  <p>
-    Spatial strategy and location intelligence for regenerative economies,
-    communities and places. GeoThrive combines GIS, H3 grids, ESG,
-    circular-economy thinking and practical field intelligence into
-    place-based solutions.
-  </p>
+</nav>
+</div>
+</header>
 
-  <section class="areas">
+<main id="top">
 
-    <div class="area">
-      <strong>Spatial Strategy</strong>
-      <span>GIS, location intelligence and decision support.</span>
-    </div>
+<div class="wrap hero">
 
-    <div class="area">
-      <strong>Regenerative Geography</strong>
-      <span>Nature, communities and local economic systems.</span>
-    </div>
+<div class="eyebrow">
+Spatial Strategy · Location Intelligence · Regenerative Geography
+</div>
 
-    <div class="area">
-      <strong>H3 & Proximity</strong>
-      <span>Hexagonal grids for local networks and analysis.</span>
-    </div>
+<h1>
+Map.<br>
+Connect.<br>
+Regenerate.
+</h1>
 
-    <div class="area">
-      <strong>ESG & Circularity</strong>
-      <span>Place-based evidence for practical action and reporting.</span>
-    </div>
+<p>
+GeoThrive turns location data into practical decisions.
+I combine GIS, H3 grids, ESG, circular-economy thinking and field
+intelligence to help organisations understand places, networks
+and opportunities.
+</p>
 
-  </section>
+<div class="actions">
+
+<a class="button primary"
+href="mailto:kshetra.govindasamy@gmail.com?subject=GeoThrive%20Demo%20Request&body=Hi%20Kshetra%2C%20I%27d%20like%20to%20arrange%20a%20GeoThrive%20demo.">
+Book a demo
+</a>
+
+<a class="button"
+href="https://map-geotripz.afrigis.co.za/"
+target="_blank">
+Explore AfriGIS partner platform ↗
+</a>
+
+</div>
+
+<div class="coords">
+33.9249° S · 18.4241° E · CAPE TOWN · SOUTH AFRICA
+</div>
+
+</div>
+
+
+<section id="services">
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="section-label">
+01 / What I do
+</div>
+
+<div>
+<h2>Geography made useful.</h2>
+
+<p class="section-copy">
+From strategic questions to working spatial prototypes,
+GeoThrive connects business needs with geographic evidence
+and practical implementation.
+</p>
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="num">01.1</div>
+<h3>Spatial Strategy</h3>
+<p>
+GIS advisory, spatial planning, demographics,
+market intelligence and decision support.
+</p>
+</div>
+
+<div class="card">
+<div class="num">01.2</div>
+<h3>H3 + Proximity Intelligence</h3>
+<p>
+Hexagonal grid models for grouping businesses,
+communities, assets and opportunities by place.
+</p>
+</div>
+
+<div class="card">
+<div class="num">01.3</div>
+<h3>ESG + Circular Economy</h3>
+<p>
+Place-based intelligence for local procurement,
+community investment and audit-friendly reporting.
+</p>
+</div>
+
+<div class="card">
+<div class="num">01.4</div>
+<h3>Regenerative Places</h3>
+<p>
+Tourism, nature-based solutions,
+cultural landscapes and place-based development.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="section-label">
+02 / Live platform
+</div>
+
+<div>
+<h2>See the spatial thinking in action.</h2>
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-copy">
+
+<div class="eyebrow">
+AfriGIS Partner Environment
+</div>
+
+<h3>
+GeoTripz × AfriGIS
+</h3>
+
+<p>
+Explore a live mapping environment connecting location intelligence,
+place-based research and practical geospatial applications.
+</p>
+
+<div class="actions">
+
+<a class="button primary"
+href="https://map-geotripz.afrigis.co.za/"
+target="_blank">
+Open platform ↗
+</a>
+
+<a class="button"
+href="/portfolio/">
+View portfolio
+</a>
+
+</div>
+
+</div>
+
+<div class="map-art"></div>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="section-label">
+03 / Method
+</div>
+
+<div>
+<h2>From question to working map.</h2>
+</div>
+
+</div>
+
+<div class="flow">
+
+<div>Understand</div>
+<div>Map</div>
+<div>Analyse</div>
+<div>Prototype</div>
+<div>Implement</div>
+<div>Report</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section id="about">
+<div class="wrap about">
+
+<div>
+
+<div class="section-label">
+04 / About
+</div>
+
+<h3>
+Kshetra Govindasamy
+</h3>
+
+<div class="eyebrow">
+Geographer · Spatial Strategist · GIS Consultant
+</div>
+
+</div>
+
+
+<div>
+
+<p>
+I work across spatial strategy, location intelligence,
+regenerative geography, ESG, circular economy and
+place-based development.
+</p>
+
+<p>
+My focus is translating geographic complexity into practical
+decisions, working prototypes and client-facing spatial solutions.
+</p>
+
+<div class="socials">
+
+<a class="button"
+href="https://www.linkedin.com/in/kshetra/"
+target="_blank">
+LinkedIn ↗
+</a>
+
+<a class="button"
+href="https://x.com/Kshetra"
+target="_blank">
+X ↗
+</a>
+
+<a class="button"
+href="https://www.youtube.com/@kshetrag"
+target="_blank">
+YouTube ↗
+</a>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section id="contact">
+
+<div class="wrap">
+
+<div class="contact">
+
+<div class="section-label">
+05 / Contact
+</div>
+
+<h2>
+Bring me a place, problem or dataset.
+</h2>
+
+<p class="section-copy">
+Let’s map what is actually happening there and turn it into
+something useful.
+</p>
+
+<div class="actions">
+
+<a class="button primary"
+href="mailto:kshetra.govindasamy@gmail.com?subject=GeoThrive%20Demo%20Request&body=Hi%20Kshetra%2C%20I%27d%20like%20to%20arrange%20a%20GeoThrive%20demo.">
+Request a GeoThrive demo
+</a>
+
+<a class="button"
+href="/portfolio/">
+Explore portfolio
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 </main>
 
-</body>
 
+<footer>
+
+<div class="wrap footer-row">
+
+<span>
+© 2026 GeoThrive Africa
+</span>
+
+<span>
+Spatial Strategy · Location Intelligence · Regenerative Geography
+</span>
+
+</div>
+
+</footer>
+
+</body>
 </html>
